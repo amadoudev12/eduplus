@@ -1,0 +1,27 @@
+import './index.css'
+import Navbar from "./assets/components/navbar/Navbar.jsx"
+import Hero from "./assets/components/hero/Hero.jsx"
+import About from "./assets/components/about/About.jsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Inscription from "./assets/components/form-inscription/Inscription.jsx";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero/>
+            <About/>
+          </>
+        } />
+        {/* <Route path='/acceuil' element={<App/>}/> */}
+        <Route path='/about' element={<About/>}/>
+        <Route path="/inscription" element={<Inscription />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
